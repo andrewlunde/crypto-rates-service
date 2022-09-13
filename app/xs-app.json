@@ -10,8 +10,7 @@
     },
     {
       "source": "/(.*)",
-      "authenticationType": "xsuaa",
-      "scope": "$XSAPPNAME.User",
+      "authenticationType": "none",
       "localDir": "resources"
     }
   ]

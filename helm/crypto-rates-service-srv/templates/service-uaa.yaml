@@ -37,3 +37,4 @@ spec:
     oauth2-configuration:
       redirect-uris:
         - 'https://{{ .Values.services.app.name }}.{{ .Values.clusterDomain }}/login/callback'
+        - 'http://localhost:5000/login/callback'
