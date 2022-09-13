@@ -1,0 +1,21 @@
+dockerID: alunde
+clusterDomain: af4cba2.kyma.ondemand.com
+gateway: kyma-gateway.kyma-system.svc.cluster.local
+services:
+  app:
+    name: crypto-rates-service-app
+  srv:
+    name: crypto-rates-service-srv
+    image:
+      repository: crypto-rates-service-srv
+      tag: "latest"
+      pullPolicy: Always
+      imagePullSecretName: docker-config
+      port: 5001
+    service:
+      port: 5001
+  uaa:
+    name: crypto-rates-service-uaa
+    xsappname: crypto-rates-service
+    bindingName: crypto-rates-service-uaa-binding
+    bindingSecretName: crypto-rates-service-uaa-binding-secret

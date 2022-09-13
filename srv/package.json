@@ -1,0 +1,12 @@
+{
+    "name": "crypto-rates-service-srv",
+    "dependencies": {
+        "express": "latest",
+        "@sap/xsenv": "latest"
+        ,"@sap/xssec": "latest"
+        ,"passport": "latest"
+    },
+    "scripts": {
+        "start": "node server.js"
+    }
+}
