@@ -29,13 +29,21 @@ spec:
           ports:
             - name: http
               containerPort: {{ .Values.services.srv.image.port }}
+          env:
+            - name: DEBUG
+              value: "sqlite"
           volumeMounts:
             - name: crypto-rates-service-uaa
               mountPath: "/etc/secrets/sapcp/xsuaa/crypto-rates-service-uaa"
               readOnly: true
+            - name: crypto-rates-service-db
+              mountPath: "/usr/src/app/srv/data"
       imagePullSecrets:
         - name: {{ .Values.services.srv.image.imagePullSecretName }}
       volumes:
         - name: crypto-rates-service-uaa
           secret:
             secretName: {{ .Values.services.uaa.bindingSecretName }}
+        - name: crypto-rates-service-db
+          persistentVolumeClaim:
+            claimName: crypto-rates-service-data

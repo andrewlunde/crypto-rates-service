@@ -1,14 +1,14 @@
 {
     "name": "crypto-rates-service-srv",
     "dependencies": {
-        "express": "latest",
         "@sap/xsenv": "latest",
         "@sap/xssec": "latest",
-        "passport": "latest",
+        "express": "latest",
         "nodemon": "latest",
-        "sqlite3": "latest"
+        "passport": "latest",
+        "sqlite3": "^5.1.0"
     },
     "scripts": {
-        "start": "nodemon server.js"
+        "start": "node server.js"
     }
 }
