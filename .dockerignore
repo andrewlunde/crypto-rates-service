@@ -1,5 +1,5 @@
 node_modules/
-default-env.json
+default-*.json
 .env
 .git/
 .github/

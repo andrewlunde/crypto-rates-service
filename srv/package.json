@@ -6,9 +6,10 @@
         "express": "latest",
         "nodemon": "latest",
         "passport": "latest",
-        "sqlite3": "^5.1.0"
+        "better-sqlite3": "latest",
+        "nunjucks": "latest"
     },
     "scripts": {
-        "start": "node server.js"
+        "start": "nodemon -e js,json,njk server.js"
     }
 }

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<title>webln</title>
+<style>
+    #mainBody {
+        font-family: Tahoma, Geneva, sans-serif;
+    }
+    #button_content {
+        display: none;
+        /* display: block; */
+    }
+    .request_labels {
+        /* display: none; */
+        display: block;
+    }
+    #request_content {
+        /* display: none; */
+        display: block;
+    }
+    .response_labels {
+        /* display: none; */
+        display: block;
+    }
+    #response_content {
+        /* display: none; */
+        display: block;
+    }
+</style>
+
+<!-- <script type="module">
+    import { requestProvider } from 'webln';
+</script> -->
+
+<!-- Page Load Script -->
+<script>
+    function preparePageElements()
+    {
+        var requestDiv = document.getElementById('button_content');
+        requestDiv.style.display = 'block';	
+        
+    }
+
+    (function () {
+        var onWindowLoad = function () {
+            
+            var loadScript = function (src, callback) {
+            
+                var element = document.createElement("script");
+                    element.src = src;
+                    element.async = true;
+                    document.body.appendChild(element);
+                    
+                    if (callback) {
+                    
+                        element.onreadystatechange = function () {
+                            if (this.readyState === "loaded" || this.readyState === "complete") { 
+                                callback();
+                            }
+                        };
+                        element.onload = callback;
+                    }
+            },
+            
+            loadArticleScript = function () {
+                console.log("Finished webln...");
+                preparePageElements();
+            };
+            console.log("Loading webln...");
+            loadScript("/scripts/webln.min.js", loadArticleScript);
+            
+        };
+    
+        if (window.addEventListener) {
+            window.addEventListener("load", onWindowLoad, false);
+        } else if (window.attachEvent) {
+            window.attachEvent("onload", onWindowLoad);
+        } else {
+            window.onload = onWindowLoad;
+        }
+    }());	
+
+    async function requestProvider()
+    {
+        console.log("requestProvider");
+        try {
+        const webln = await WebLN.requestProvider();
+            // Now you can call all of the webln.* methods
+            console.log("requestProvider...OK");
+        }
+        catch(err) {
+            // Tell the user what went wrong
+            console.log("requestProvider...Error");
+            alert(err.message);
+        }
+    }
+
+
+    function randomIntFromInterval(min,max)
+    {
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+</script>
+<!-- <script type="module" src="/scripts/webln.min.js"></script> -->
+<!-- <script>
+    import { requestProvider } from 'webln';
+</script> -->
+<!-- <script
+  src="https://unpkg.com/webln@0.2.0/dist/webln.min.js"
+  integrity="sha384-mTReBqbhPO7ljQeIoFaD1NYS2KiYMwFJhUNpdwLj+VIuhhjvHQlZ1XpwzAvd93nQ"
+  crossorigin="anonymous"
+></script> -->
+<!-- wget https://unpkg.com/webln@0.3.0/dist/webln.min.js -->
+<!-- <script
+  src="https://unpkg.com/webln@0.3.0/dist/webln.min.js"
+  integrity="sha384-g4CABMESGmsa44I6J+t/4fY3DYGpbl8EjqX4L8g6rmD0RLjVinenmzEDqSH3f1QV"
+  crossorigin="anonymous"
+></script> -->
+</head>
+<body id="mainBody">
+<strong>webln</strong><br />
+<br />
+<img src="favicon.ico" /><br />
+<div id="button_content">
+    <p><button id="requestProvider" type="button" onclick="requestProvider()">requestProvider</button> button to requestProvider.</p>
+</div>
+    
+
+
+</body>
+</html>

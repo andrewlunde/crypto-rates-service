@@ -1,0 +1,98 @@
+apiVersion: cert.gardener.cloud/v1alpha1
+kind: Certificate
+metadata:
+  annotations:
+    cert.gardener.cloud/not-after: '2023-01-09T14:12:33Z'
+  creationTimestamp: '2022-10-11T15:11:39Z'
+  generation: 2
+  labels:
+    app.kubernetes.io/name: letsencrypt-cert
+    cert.gardener.cloud/hash: b164663fc17e3149112374eb12cdfc086549da195c2c9904490f1d4a
+  managedFields:
+    - apiVersion: cert.gardener.cloud/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/name': {}
+        'f:spec':
+          .: {}
+          'f:commonName': {}
+          'f:issuerRef':
+            .: {}
+            'f:name': {}
+            'f:namespace': {}
+          'f:renew': {}
+      manager: Mozilla
+      operation: Update
+      time: '2022-10-11T15:11:39Z'
+    - apiVersion: cert.gardener.cloud/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:cert.gardener.cloud/not-after': {}
+          'f:labels':
+            'f:cert.gardener.cloud/hash': {}
+        'f:spec':
+          'f:secretRef':
+            .: {}
+            'f:name': {}
+            'f:namespace': {}
+      manager: cert-controller-manager
+      operation: Update
+      time: '2022-10-11T15:12:36Z'
+    - apiVersion: cert.gardener.cloud/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:commonName': {}
+          'f:conditions': {}
+          'f:expirationDate': {}
+          'f:issuerRef':
+            .: {}
+            'f:cluster': {}
+            'f:name': {}
+            'f:namespace': {}
+          'f:message': {}
+          'f:observedGeneration': {}
+          'f:state': {}
+      manager: cert-controller-manager
+      operation: Update
+      subresource: status
+      time: '2022-10-11T15:12:36Z'
+  name: letsencrypt-cert
+  namespace: istio-system
+  resourceVersion: '25120820'
+  uid: 93777414-eab4-4e98-968d-b251ad4f57fc
+spec:
+  commonName: '*.cryptoassetssubledger.com'
+  issuerRef:
+    name: letsencrypt
+    namespace: dev
+  renew: false
+  secretRef:
+    name: letsencrypt-cert-jx569
+    namespace: istio-system
+status:
+  commonName: '*.cryptoassetssubledger.com'
+  conditions:
+    - lastTransitionTime: '2022-10-11T15:12:36Z'
+      message: ''
+      observedGeneration: 2
+      reason: Ready
+      status: 'True'
+      type: Ready
+  expirationDate: '2023-01-09T14:12:33Z'
+  issuerRef:
+    cluster: target
+    name: letsencrypt
+    namespace: dev
+  message: >-
+    certificate (SN 3c:fd:a9:26:c9:5e:68:45:c3:46:fa:18:39:1f:9e:95:d6:5) valid
+    from 2022-10-11 14:12:34 +0000 UTC to 2023-01-09 14:12:33 +0000 UTC
+  observedGeneration: 2
+  state: Ready

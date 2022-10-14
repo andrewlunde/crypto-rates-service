@@ -2,9 +2,11 @@
     "name": "crypto-rates-service-app",
     "dependencies": {
         "@sap/approuter": "latest",
-        "nodemon": "latest"
+        "nodemon": "latest",
+        "webln": "^0.3.0"
     },
     "scripts": {
-        "start": "node node_modules/@sap/approuter/approuter.js"
-    }
+        "start": "nodemon -e js,json,html node_modules/@sap/approuter/approuter.js"
+    },
+    "type": "module"
 }

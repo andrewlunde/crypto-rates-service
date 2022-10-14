@@ -8,6 +8,6 @@ data:
       {
         "name": "srv",
         "url": "http://{{ .Values.services.srv.name }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.services.srv.service.port }}",
-        "x_forwardAuthToken": true
+        "forwardAuthToken": true
       }
     ]

@@ -1,0 +1,62 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"networking.istio.io/v1alpha3","kind":"Gateway","metadata":{"annotations":{},"labels":{"app.kubernetes.io/name":"crypto-assets-subledger-aws-gateway"},"name":"crypto-assets-subledger-aws-gateway","namespace":"aws-dns"},"spec":{"selector":{"istio":"ingressgateway"},"servers":[{"hosts":["*.cryptoassetssubledger.com"],"port":{"name":"crypto-assets-subledger-https","number":443,"protocol":"HTTPS"},"tls":{"credentialName":"letsencrypt-cert-9t54f","mode":"SIMPLE"}},{"hosts":["*.cryptoassetssubledger.com"],"port":{"name":"crypto-assets-subledger-http","number":80,"protocol":"HTTP"},"tls":{"httpsRedirect":true}}]}}
+  creationTimestamp: '2022-10-11T15:38:01Z'
+  generation: 2
+  labels:
+    app.kubernetes.io/name: crypto-assets-subledger-aws-gateway
+  managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/name': {}
+        'f:spec':
+          .: {}
+          'f:selector':
+            .: {}
+            'f:istio': {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: '2022-10-11T15:38:01Z'
+    - apiVersion: networking.istio.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:servers': {}
+      manager: Mozilla
+      operation: Update
+      time: '2022-10-11T16:17:48Z'
+  name: crypto-assets-subledger-aws-gateway
+  namespace: aws-dns
+  resourceVersion: '25145371'
+  uid: f941d82f-57b7-4bd5-a6fc-366ff7e3480a
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - hosts:
+        - '*.cryptoassetssubledger.com'
+      port:
+        name: crypto-assets-subledger-https
+        number: 443
+        protocol: HTTPS
+      tls:
+        credentialName: letsencrypt-cert-jx569
+        mode: SIMPLE
+    - hosts:
+        - '*.cryptoassetssubledger.com'
+      port:
+        name: crypto-assets-subledger-http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true

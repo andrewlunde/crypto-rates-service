@@ -20,3 +20,6 @@ _out
 .gen/
 .DS_Store
 package-lock.json
+stash/
+*.pem
+*.crt

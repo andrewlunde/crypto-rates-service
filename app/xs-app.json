@@ -3,12 +3,16 @@
   "authenticationMethod": "none",
   "routes": [
     {
+      "source": "/favicon.ico",
+      "localDir": "resources"
+    },
+    {
       "source": "^/srv/(.*)$",
       "destination": "srv"
     },
     {
       "source": "/(.*)",
-      "localDir": "resources"
+      "destination": "srv"
     }
   ]
 }
