@@ -7,4 +7,6 @@ module.exports = (app, server) => {
 	app.use("/static", require("./routes/static")());
 	app.use("/dynamic", require("./routes/dynamic")());
 	app.use("/adm", require("./routes/adm")());
+	app.use("/srv", require("./routes/srv")());
+	app.use("/saas", require("./routes/saas")());
 };

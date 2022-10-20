@@ -7,6 +7,18 @@
       "localDir": "resources"
     },
     {
+      "source": "^/uploadCryptoData/(.*)$",
+      "destination": "srv"
+    },
+    {
+      "source": "^/downloadCryptoData/(.*)$",
+      "destination": "srv"
+    },
+    {
+      "source": "^/saas/(.*)$",
+      "destination": "srv"
+    },
+    {
       "source": "^/srv/(.*)$",
       "destination": "srv"
     },
